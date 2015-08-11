@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
 		@title = title
   	end
 
+  	def isAdmin
+  		@flag = true if session[:category] == "admin"
+  	end
+
+  	helper_method :isAdmin
+
 end

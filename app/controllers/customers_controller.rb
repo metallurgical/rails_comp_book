@@ -16,10 +16,9 @@ class CustomersController < ApplicationController
   			format.html { redirect_to :action => "new", notice: "SuccessFull Create Account"}
   			format.js
   		end
-=begin
   	else
   		render 'new'
-=end
+
 
   	end
   end

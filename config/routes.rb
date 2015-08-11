@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
+
+  root 'customers#new'
   resources:customers
   resources:products
+  resources:categories
+
+  get 'privates/login' => 'privates#login'
+  post 'privates' => 'privates#doLogin'
+  resources:privates
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

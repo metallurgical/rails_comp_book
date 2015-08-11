@@ -1,0 +1,28 @@
+<div class="row">
+	<%= link_to "Add New Category", new_category_path, class: "btn btn-info" %>
+</div>
+<br/>
+<div class="row">
+	<table class="table table-striped">
+		<tr>
+			<th>No.</th>
+			<th>Category Name</th>
+			<th>Actions</th>
+		</tr>
+		<% 
+		a = 0
+		@categories.each do |d| %>
+		<tr>
+			<td><%= a+=1 %></td>
+			<td><%= d.cname %></td>
+			<td>
+				<%= link_to "Edit", edit_category_path(d.id), class: "btn btn-primary" %>
+				<%= link_to "Delete", category_path(d.id), 
+					:data => { confirm: "Are you sure to do this??" },
+					class: "btn btn-danger", method: 'delete' 
+				%>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+</div>
