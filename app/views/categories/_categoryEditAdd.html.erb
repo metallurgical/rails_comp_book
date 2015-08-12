@@ -10,6 +10,40 @@
 			</div>
 		</div>
 	</div>
+<!-- 	<div class="panel panel-default">
+		<div class="panel-body">
+			<%= f.submit  class: "pull-right" %>
+		</div>
+	</div> -->
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Product Form (optional)
+		</div>
+		<%= f.fields_for :products do |ff| %>
+		<div class="panel-body">
+			<div class="form-group">
+					<%= ff.label :pname, "Product Name" %>
+					<%= ff.text_field :pname, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= ff.label :pquantity, "Product Quantity" %>
+					<%= ff.text_field :pquantity, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= ff.label :pcolor, "Product Color" %>
+					<%= ff.text_field :pcolor, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= ff.label :pprice, "Product Price" %>
+					<%= ff.text_field :pprice, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= ff.label :pno, "Product Number" %>
+					<%= ff.text_field :pno, class: "form-control" %>
+				</div>				
+		</div>
+		<% end %>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-body">
 			<%= f.submit  class: "pull-right" %>

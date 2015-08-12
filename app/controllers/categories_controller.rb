@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
   def new
   	@title = header_title( :"Add New Category" )
   	@category = Category.new
+    @category.products.build
   end
 
   def create
@@ -49,7 +50,7 @@ class CategoriesController < ApplicationController
 
   private
   	def permit_params
-  		params.require( :category ).permit( :cname )
+  		params.require( :category ).permit( :cname, products_attributes: [:id, :pname, :pquantity, :pcolor, :pprice, :pno ] )
   	end
 
 end

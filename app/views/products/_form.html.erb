@@ -1,0 +1,40 @@
+<%= form_for @product do |f| %>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			Product Form
+		</div>
+		<div class="panel-body">
+			
+				<div class="form-group">
+					<%= f.label :pname, "Product Name" %>
+					<%= f.text_field :pname, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :pquantity, "Product Quantity" %>
+					<%= f.text_field :pquantity, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :pcolor, "Product Color" %>
+					<%= f.text_field :pcolor, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :pprice, "Product Price" %>
+					<%= f.text_field :pprice, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :pno, "Product Number" %>
+					<%= f.text_field :pno, class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= f.label :category_id, "Product Category" %>
+					<%= f.select :category_id,@catAll.collect { |p| [p.cname, p.id] },{include_blank: true},class: "form-control" %>
+				</div>
+			
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<%= f.submit class: "btn btn-primary pull-right"  %>
+		</div>
+	</div>
+<% end %>
